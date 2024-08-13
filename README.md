@@ -1,6 +1,11 @@
 
-![Generated with FLUX](assets/logo.png){ width="300" height="300" style="display: block; margin: 0 auto" }
-# 🤔 LlamaShell
+# LlamaShell
+
+<div align="center">
+	<img width=250 src="assets/logo.png">
+</div>
+
+----
 
 **LlamaShell** A simple Retrieval-Augmented Generation (RAG) system leveraging the Llama 3.1 model to enhance Linux CLI usability. Implemented using Go and Ollama, LlamaShell provides context-aware command suggestions and automation to streamline developer workflows.
 

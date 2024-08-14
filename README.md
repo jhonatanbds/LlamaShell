@@ -7,7 +7,7 @@
 
 ----
 
-**LlamaShell** A simple Retrieval-Augmented Generation (RAG) system leveraging the Llama 3.1 model to enhance Linux CLI usability. Implemented using Go and Ollama, LlamaShell provides context-aware command suggestions and automation to streamline developer workflows.
+🦙 **LlamaShell** is a simple Retrieval-Augmented Generation (RAG) system leveraging the Llama 3.1 model to enhance Linux CLI usability. Implemented using Go and Ollama, LlamaShell provides context-aware command suggestions and automation to streamline developer workflows.
 
 ## ⚡ Features
 
@@ -34,13 +34,32 @@
 	```bash
 	go mod tidy
 3.   **Set Up Ollama Models**: Follow the instructions in the Ollama documentation to set up the required models for LlamaShell.
-    
+
+## Usage
+
+### Chat
+
+Activate LlamaShell CLI with `go run main.go chat`, it will open the chat prompt where LlamaShell will suggest commands for your tasks. For instance, see the example below:
+
+```bash
+Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.
+>>> I need to create a text file with 36 random numbers
+dd if=/dev/urandom bs=1 count=36 2>/dev/null | tr -dc '0-9' > random_numbers.txt
+>>> upload this file to the gcp bucket gs://storage/personal
+gsutil cp random_numbers.txt gs://storage/personal
+>>> I wanna move the file to a new bucket: gs://storage/personal/random
+gsutil mv gs://storage/personal/random_numbers.txt gs://storage/personal/random/
+>>> exit
+Ending chat.
+```
+
+
 ### License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ### 🔗 Acknowledgments
 
--   **LangChain Go**
--   **Ollama**
--   **Cobra CLI**
+-   [**LangChain Go**](https://github.com/tmc/langchaingo)
+-   [**Ollama**](https://ollama.com/)
+-   [**Cobra CLI**](https://github.com/spf13/cobra)

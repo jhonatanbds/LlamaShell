@@ -33,7 +33,7 @@ func Chat() {
 	elapsed := time.Since(start)
 	log.Printf("Ollama loading took %s", elapsed)
 
-	fmt.Println("Chat with LlamaShell. Type 'exit' to end the conversation.")
+	fmt.Println("Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.")
 
 	for {
 		// Get user input

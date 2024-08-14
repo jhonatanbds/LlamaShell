@@ -20,12 +20,15 @@
 ### Prerequisites
 
 -   **Go**: Make sure you have Go installed. You can download it [here](https://golang.org/dl/).
--   **Ollama**: Set up Ollama models on your machine or server. Refer to the [Ollama](https://ollama.com/) documentation for installation instructions.
+-   **Ollama**: Set up Ollama models on your machine or server. Refer to the [Ollama](https://ollama.com/) documentation for installation instructions. Typically:
+    ```bash
+    curl -fsSL https://ollama.com/install.sh | sh
+    ```
 -   **LangChain Go**: Install the LangChain Go library. More information is available in the [LangChain Go documentation](https://github.com/langchain-ai/langchain-go).
 
 ### Installation
 
-1.  **Clone the Repository**:
+1. **Clone the Repository**:
     ```bash
     git clone https://github.com/yourusername/LlamaShell.git 
     cd LlamaShell
@@ -33,26 +36,30 @@
 2. **Install Dependencies**: Ensure that all necessary Go modules and dependencies are installed:
 	```bash
 	go mod tidy
-3.   **Set Up Ollama Models**: Follow the instructions in the Ollama documentation to set up the required models for LlamaShell.
+3. **Build and install**:
+    ```bash
+    go build -o llamash
+    go install
+    ```
+
 
 ## Usage
 
 ### Chat
 
-Activate LlamaShell CLI with `go run main.go chat`, it will open the chat prompt where LlamaShell will suggest commands for your tasks. For instance, see the example below:
+Activate LlamaShell CLI with `llamash chat`, it will open the chat prompt where LlamaShell will suggest commands for your tasks. For instance, see the example below:
 
-```bash
-Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.
->>> I need to create a text file with 36 random numbers
-dd if=/dev/urandom bs=1 count=36 2>/dev/null | tr -dc '0-9' > random_numbers.txt
->>> upload this file to the gcp bucket gs://storage/personal
-gsutil cp random_numbers.txt gs://storage/personal
->>> I wanna move the file to a new bucket: gs://storage/personal/random
-gsutil mv gs://storage/personal/random_numbers.txt gs://storage/personal/random/
->>> exit
-Ending chat.
-```
-
+    ```bash
+    Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.
+    >>> I need to create a text file with 36 random numbers
+    dd if=/dev/urandom bs=1 count=36 2>/dev/null | tr -dc '0-9' > random_numbers.txt
+    >>> upload this file to the gcp bucket gs://storage/personal
+    gsutil cp random_numbers.txt gs://storage/personal
+    >>> I wanna move the file to a new bucket: gs://storage/personal/random
+    gsutil mv gs://storage/personal/random_numbers.txt gs://storage/personal/random/
+    >>> exit
+    Ending chat.
+    ```
 
 ### License
 
@@ -63,3 +70,18 @@ This project is licensed under the MIT License. See the LICENSE file for details
 -   [**LangChain Go**](https://github.com/tmc/langchaingo)
 -   [**Ollama**](https://ollama.com/)
 -   [**Cobra CLI**](https://github.com/spf13/cobra)
+
+## TODO
+
+ - [X] chat cmd
+ - [X] loading CLI animation
+ - [X] LLM initial context
+ - [ ] run cmd
+ - [ ] set configs: ollama model
+ - [ ] create config file
+ - [x] build + install
+ - [ ] run option to chat cmd
+ - [ ] RAG
+ - [ ] use command history context
+ - [ ] use directory tree context
+ - [ ] tests :cry:

@@ -63,11 +63,11 @@ Ending chat.
 
 ### Run
 
-Activate LlamaShell CLI with `llamash run <your desired task>`, LlamaShell will show you the suggested command to perform the desired task, which you can run or regenerating using the arrow keys to navigate up and down and Enter to choose or press q to quit. For instance, see the example below:
+Activate LlamaShell CLI with `llamash run <your desired task>`, LlamaShell will show you the suggested command to perform the desired task, which you can run or regenerate the suggested command for another option. Use the arrow keys to navigate up and down, `Enter` to choose or press `q` to quit. For instance, see the example below:
 
 ```bash
-llamash run generate a hello world program in python
-> print("Hello, World!")
+llamash run make a hello world python file 
+> echo "print('Hello, World!')" > hello.py
   Regenerate
 llamash run show the content of the file hello.py
 > cat hello.py

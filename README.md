@@ -49,17 +49,31 @@
 
 Activate LlamaShell CLI with `llamash chat`, it will open the chat prompt where LlamaShell will suggest commands for your tasks. For instance, see the example below:
 
-    ```bash
-    Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.
-    >>> I need to create a text file with 36 random numbers
-    dd if=/dev/urandom bs=1 count=36 2>/dev/null | tr -dc '0-9' > random_numbers.txt
-    >>> upload this file to the gcp bucket gs://storage/personal
-    gsutil cp random_numbers.txt gs://storage/personal
-    >>> I wanna move the file to a new bucket: gs://storage/personal/random
-    gsutil mv gs://storage/personal/random_numbers.txt gs://storage/personal/random/
-    >>> exit
-    Ending chat.
-    ```
+```bash
+Chat with 🦙 LlamaShell. Type 'exit' to end the conversation.
+>>> I need to create a text file with 36 random numbers
+dd if=/dev/urandom bs=1 count=36 2>/dev/null | tr -dc '0-9' > random_numbers.txt
+>>> upload this file to the gcp bucket gs://storage/personal
+gsutil cp random_numbers.txt gs://storage/personal
+>>> I wanna move the file to a new bucket: gs://storage/personal/random
+gsutil mv gs://storage/personal/random_numbers.txt gs://storage/personal/random/
+>>> exit
+Ending chat.
+```
+
+### Run
+
+Activate LlamaShell CLI with `llamash run <your desired task>`, LlamaShell will show you the suggested command to perform the desired task, which you can run or regenerating using the arrow keys to navigate up and down and Enter to choose or press q to quit. For instance, see the example below:
+
+```bash
+llamash run generate a hello world program in python
+> print("Hello, World!")
+  Regenerate
+llamash run show the content of the file hello.py
+> cat hello.py
+  Regenerate
+print('Hello, World!')
+```
 
 ### License
 
@@ -76,7 +90,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
  - [X] chat cmd
  - [X] loading CLI animation
  - [X] LLM initial context
- - [ ] run cmd
+ - [X] run cmd
  - [ ] set configs: ollama model
  - [ ] create config file
  - [x] build + install
